@@ -5,9 +5,7 @@ const fs = require('fs');
 const _ =  require('lodash');
 const yargs = require('yargs');
 const argv = yargs.argv;
-
 const command = argv._[0];
-// console.log(argv);
 
 switch(command.toLowerCase()) {
     case 'addnote':

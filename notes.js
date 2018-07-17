@@ -1,5 +1,5 @@
 console.log('Starting notes.js');
-const filePath = './playground/test.json';
+const filePath = './notes.json';
 const fs = require('fs');
 const _ = require('lodash');
 
@@ -8,9 +8,10 @@ function getNotesFromFile_() {
     try {
         notes = fs.readFileSync(filePath);
     } catch(error) {
-        console.log(error);
+        console.log(`No such file exist: ${error}`);
     }
-    return JSON.parse(notes);
+
+    return _.isEmpty(notes) ? notes : JSON.parse(notes);
 }
 
 function writeNoteToFile_(object) {
